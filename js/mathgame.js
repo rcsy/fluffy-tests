@@ -4,21 +4,20 @@ var wrong = 0;
 var a = 0;
 var b = 0;
 
-
+// //keypresses
+document.getElementById('answer').onkeypress = keysPressed
 
 function keysPressed(e) {
     // store an entry for every key pressed
-    keys[e.keyCode] = true;
-    if (keys[13]) { // pressed ENTER
+    if (e.keyCode == 13) { // pressed ENTER
 	     check();
     }
 }
 
 
-
 function newGame(){
-  var a = Math.floor((Math.random() * 1000) + 1)
-  var b = Math.floor((Math.random() * 1000) + 1)
+  a = Math.floor((Math.random() * 1000) + 1)
+  b = Math.floor((Math.random() * 1000) + 1)
   var x = document.getElementById("question");
   x.innerHTML = "What is " + a + " x " + b + "?";
 }
